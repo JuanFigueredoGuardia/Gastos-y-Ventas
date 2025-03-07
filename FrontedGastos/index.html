@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Control de Gastos y Ventas</title>
+    <link rel="icon" href="carrito-icon.png">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1><i class="ri-store-line"></i> Control de Gastos y Ventas <i class="ri-store-line"></i></h1>
+
+        <form id="transaction-form">
+            <input type="text" id="description" placeholder="Descripción" required>
+            <input type="number" id="amount" placeholder="Monto" required>
+            <select id="category">
+                <option value="Producto vendido">Producto vendido</option>
+                <option value="Almacenamiento">Almacenamiento</option>
+                <option value="Mantenimiento">Mantenimiento</option>
+            </select>
+            <select id="type">
+                 <option value="ingreso">Ingreso</option>
+                 <option value="gasto">Gasto</option>
+            </select>
+            <button type="submit">Agregar</button>
+        </form>
+
+        <div class="totals">
+            <p>Total Ingresos: <span id="total-ingresos">0.00</span></p>
+            <p>Total Gastos: <span id="total-gastos">0.00</span></p>
+        </div>
+
+        <h2>Historial</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Descripción</th>
+                    <th>Monto</th>
+                    <th>Categoría</th>
+                    <th>Tipo</th>
+                    <th>Acción</th>
+                </tr>
+            </thead>
+            <tbody id="transaction-list">
+            </tbody>
+        </table>
+
+        <h2>Resumen</h2>
+        <canvas id="chart"></canvas>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
